@@ -30,4 +30,5 @@ where users can manage tasks, collaborate in real time chat and visualize projec
 * HTML5 - it is used to define the content of all pages
 * CSS - For styling the application.
  
-   
+# Clone the repository
+https://github.com/yourusername/django-bridge-folder.git
