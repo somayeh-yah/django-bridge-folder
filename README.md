@@ -34,6 +34,17 @@ where users can manage tasks, collaborate in real time chat and visualize projec
 git clone https://github.com/yourusername/django-bridge-folder.git
 
 # Screenshots
-
+**HomePage**
 <img width="312" alt="Home-page" src="https://github.com/user-attachments/assets/0b7340e2-7db6-4ca3-90cb-faeecf0e1cdb" />
-<img width="381" alt="Skärmbild" src="https://github.com/user-attachments/assets/f183077b-5d38-4541-bdd2-be7873cb1c0f" />
+
+**Dashboard**
+<img width="362" alt="Dashboard" src="https://github.com/user-attachments/assets/e7bbffd5-245d-4e3d-87ec-529c6af1142e" />
+
+**LandingPage kanban**
+<img width="361" alt="landing-kanban" src="https://github.com/user-attachments/assets/7655f2ba-4fa6-42ef-ae13-4af61ac14cf9" />
+
+**Board**
+<img width="361" alt="board" src="https://github.com/user-attachments/assets/f695d073-3d42-495b-b21d-ecce2016bde7" />
+
+
+
