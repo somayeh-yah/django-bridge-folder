@@ -35,7 +35,8 @@ git clone https://github.com/yourusername/django-bridge-folder.git
 
 # Screenshots
 **HomePage**
-<img width="312" alt="Home-page" src="https://github.com/user-attachments/assets/0b7340e2-7db6-4ca3-90cb-faeecf0e1cdb" />
+<img width="357" alt="Home-page" src="https://github.com/user-attachments/assets/f068f237-8840-4863-b87f-0967caa8ef7a" />
+
 
 **Dashboard**
 <img width="362" alt="Dashboard" src="https://github.com/user-attachments/assets/e7bbffd5-245d-4e3d-87ec-529c6af1142e" />
