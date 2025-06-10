@@ -31,4 +31,4 @@ where users can manage tasks, collaborate in real time chat and visualize projec
 * CSS - For styling the application.
  
 # Clone the repository
-https://github.com/yourusername/django-bridge-folder.git
+git clone https://github.com/yourusername/django-bridge-folder.git
