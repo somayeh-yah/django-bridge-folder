@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Student Dashboard{% endblock %}
+{% block content %}
+    <div class="dashboard-layout ">
+        <!-- SIDEBAR-VÄNSTER-DASHBOARD-DESKTOP-->
+        <aside class="side-menu-login-user py-1">
+            <a href="/"
+               class="ms-3 mb-0 text-warning fs-2 text-decoration-none custom-logo">SkyLearn</a>
+            {% include 'partials/sidebar_dashboard.html' %}
+        </aside>
+        <!-- TOPBAR + MAIN CONTENT -->
+        <div class="dashboard-center-content">
+            {% include 'partials/topbar.html' %}
+            <!-- MAIN CONTENT -->
+            <main id="dashboard-main-content" class="p-0">
+                {% block main_content %}
+                    {% include 'partials/storytelling_section.html' %}
+                    {% include 'partials/softskills_section.html' %}
+                {% endblock %}
+            </main>
+        </div>
+        <!-- INNER-SIDEBAR-HÖGER-DESKTOP-->
+        <aside class="inner-sidebar">
+            {% include 'partials/innersidebar.html' %}
+        </aside>
+        <!-- INNER-SIDEBAR-HÖGER-MOBILE -->
+        <div class="offcanvas offcanvas-end innersidebarMeny_offcanvas d-xl-none"
+             id="innerSidebarMeny">
+            <div class="offcanvas-header">
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">{% include 'partials/innersidebar.html' %}</div>
+        </div>
+        <!-- SIDEBAR-VÄNSTER-DASHBOARD-MOBILE -->
+        <div class="offcanvas offcanvas-start custom-sidebar d-xl-none"
+             id="sidebarMenu">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-warning fs-3 fw-bold">SkyLearn</h5>
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">{% include 'partials/sidebar_dashboard.html' %}</div>
+        </div>
+    </div>
+{% endblock %}

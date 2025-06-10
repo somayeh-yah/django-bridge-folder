@@ -1,0 +1,65 @@
+
+
+<div class="container-fluid">
+    
+        <div class=" d-flex flex-wrap justify-content-between align-items-center gap-2 py-2 px-3 ">
+            <!-- ADD-MEMBER AND ADD-TASK BTN AND GO TO SPRINT-CHART BTN MENY -->
+            <ul class="nav kanban-nav flex-row flex-grow-1 justify-content-start ">
+                <li class="nav-item">
+                    <a hx-get="{% url 'invite_members' board.id %}"
+                       hx-target="#modal-container"
+                       hx-swap="innerHTML"
+                       class="nav-link kanban-link">Invite member</a>
+                </li>
+                <li class="nav-item">
+                    <a hx-get="{% url 'add_task_form' board.id %}"
+                       hx-target="#modal-container"
+                       hx-swap="innerHTML"
+                       class="nav-link kanban-link">
+                        Task <i class="bi bi-plus text-dark"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a hx-get="{% url 'sprint_activity' board.id %}"
+                       hx-target="#modal-container"
+                       hx-swap="innerHTML"
+                       hx-delay="600ms"
+                       class="nav-link kanban-link">
+                        Sprint activity<i class="bi bi-activity text-dark"></i>
+                    </a>
+                </li>
+            </ul>
+           
+            <!-- DROPDOWN SHOOSE BOARD-->
+            <div class="shoose-board ">
+           <form
+            hx-post="{% url 'kanban_board_partial_view' %}"
+            hx-target="#kanban-board-content"
+            hx-swap="innerHTML"
+            hx-indicator=".loading-indicator"
+            class="input-group w-auto"
+             >
+       <!-- IKON -->
+        <span class="input-group-text bg-dark border-0 custom-select-board-icon ">
+         <i class="bi bi-kanban"></i>
+         </span>
+
+       <!-- DROPDOWN FÖR ATT VÄXLA MELLAN OLIKA BOARDS -->
+       <select
+       name="board_id"
+       class="form-select form-select-sm bg-dark border-0 shadow-sm rounded-end-pill text-white custom-select-board shadow-sm "
+       style="cursor: pointer;"
+      
+       onchange="this.form.requestSubmit()"
+      >
+        {% for board in boards %}
+        <option value="{{ board.id }}" >{{ board.name }}</option>
+       {% endfor %}
+     </select>
+     </form>
+
+        <div class="loading-indicator"><i class="bi bi-arrow-repeat"></i>Laddar...</div> 
+            </div>
+        </div>
+ 
+</div>

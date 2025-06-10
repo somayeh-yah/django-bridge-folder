@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Register{% endblock %}
+{% block content %}
+    {% include 'partials/sidebar.html' %}
+    <div class="row justify-content-center pt-5 vh-auto">
+        <div class="d-flex justify-content-start p-4">
+            <a class="btn btn-lg goback-button" href="{% url 'landing_page' %}">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+        </div>
+        <hr>
+        <div class="col-md-6">
+            <div class="card p-5 shadow-sm form-card mb-5">
+                <h2>Register</h2>
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-floating mb-3">
+                            {% if field.name == "username" %}
+                                {% render_field field class="form-control" hx-post="/check_username/" hx-trigger="keyup changed" hx-target="#username-error" placeholder="{{ field.label }}" %}
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                <div id="username-error" class="mt-2"></div>
+                            {% elif field.name == "role" %}
+                                <select class="form-select"
+                                        id="{{ field.id_for_label }}"
+                                        name="{{ field.name }}"
+                                        hx-post="/check_role/"
+                                        hx-trigger="change"
+                                        hx-target="#role-description">
+                                    {% for value, label in field.field.choices %}
+                                        <option value="{{ value }}" {% if field.value == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                <div id="role-description" class="mt-2 text-info"></div>
+                            {% else %}
+                                {% render_field field class="form-control" placeholder="{{ field.label }}" %}
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {% endif %}
+                            {{ field.errors }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn mt-2 mb-2 btn-register">Register</button>
+                </form>
+                <p>
+                    Already have an account? <a href="{% url 'login' %}">Log in here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

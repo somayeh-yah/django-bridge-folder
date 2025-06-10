@@ -1,0 +1,22 @@
+       {% if messages %}
+                <div class="my-3 mx-auto "
+                     id="close-div"
+                     style="width: 90%;
+                            max-width: 600px">
+                    {% for message in messages %}
+                        <div class="alert bg-light alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-4 rounded"
+                             role="alert"
+                             hx-trigger="load delay:3s"
+                             hx-get="{% url 'close_alert' %}"
+                             hx-target="#close-div"
+                             hx-swap="delete">
+                            {{ message }}
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+             

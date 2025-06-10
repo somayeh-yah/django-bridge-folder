@@ -1,0 +1,19 @@
+{% extends 'dashboard_student.html' %}
+{% block main_content %}
+    {% csrf_token %}
+    {% if board %}
+        <div class="container-fluid kanban-board py-2 ">
+           
+             {% include "partials/messages.html" %}
+             {% include 'partials/board_topbar.html' with board=board boards=boards %} 
+            
+            <div id="kanban-board-content">
+                  
+                 {% include 'partials/board_content.html' with board=board boards=boards columns=columns %}
+            </div>
+            
+        </div>  
+        {% else %}
+            {% include 'create_board.html' %}
+        {% endif %}
+    {% endblock %}

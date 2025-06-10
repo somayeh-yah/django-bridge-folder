@@ -1,0 +1,32 @@
+{% extends 'dashboard_student.html' %}
+{% block main_content %}
+    <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
+        <h2 class="text-primary mb-5 display-4 fw-normal text-center text-capitalize">You don't have a board yet!</h2>
+        <div class="card p-5 bg-light d-flex flex-column justify-content-center align-items-center"
+             style="border: none;
+                    border-radius: 1rem;
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto">
+            <p class="text-muted text-lg-center fs-5 mb-5">Create your first kanban board to get started.</p>
+            <form method="post"
+                  action="{% url 'create_board' %}"
+                  class="d-flex flex-column gap-3">
+                {% csrf_token %}
+                <div class="form-group d-flex flex-column border-light"
+                     style="border: none">
+                    <!-- VISA ERROR OM DET FINNS -->
+                    {% if form.name.errors %}
+                        <div class="invalid-feedback d-block text-danger mt-1">{{ form.name.errors.0 }}</div>
+                    {% endif %}
+                    {{ form.name }}
+                </div>
+                <button type="submit"
+                        class="btn btn-lg btn-warning shadow-sm d-flex align-items-center justify-content-center px-4 py-2 rounded-pill text-white fw-semibold btn-home"
+                        style="border-radius: 50px">
+                    Create Board <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

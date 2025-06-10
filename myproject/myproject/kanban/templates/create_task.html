@@ -1,0 +1,24 @@
+{% extends 'dashboard_student.html' %}
+{% block main_content %}
+    <div class="container py-3 vh-100 d-flex flex-column justify-content-center      align-items-center ">
+        <div class="card p-5 bg-light d-flex flex-column justify-content-center align-items-center "
+             style="border: none;
+                    border-radius: 1rem;
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto">
+            <form method="POST"
+                  class="d-flex flex-column gap-3"
+                  action="{% url 'add_task' board.id %}">
+                {% csrf_token %}
+                <div class="form-group d-flex flex-column border-light p-2"
+                     style="border: none">{{ form }}</div>
+                <button type="submit"
+                        class="btn btn-lg btn-warning shadow-sm d-flex align-items-center justify-content-center px-4 py-2 rounded-pill text-white fw-semibold btn-home"
+                        style="border-radius: 50px">
+                    Add task <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

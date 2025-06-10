@@ -1,0 +1,26 @@
+<div class="modal fade show"
+     id="reusableModal"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="post"
+                 action="{%  url 'add_column' board.id %}" 
+                 class="htmx-close-modal">
+                {% csrf_token %}
+                <div class="modal-header bg-dark rounded-top ">
+                    <h5 class="modal-title text-light">Add Column</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                            >
+                        
+                    </button>
+                </div>
+                <div class="modal-body">{{ form }}</div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

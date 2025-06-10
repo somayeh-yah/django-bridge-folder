@@ -1,0 +1,26 @@
+<div class="modal fade show"
+     id="reusableModal"
+     tabindex="-1"
+     aria-modal="true"
+     role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="post" 
+                  action="{% url 'edit_column' board.id column.id %}"
+                  class="htmx-close-modal">
+                {% csrf_token %}
+                <div class="modal-header bg-dark rounded-top ">
+                    <h5 class="modal-title text-light">Edit Column</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">{{ form }}</div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

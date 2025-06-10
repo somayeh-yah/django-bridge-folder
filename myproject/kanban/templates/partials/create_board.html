@@ -1,0 +1,35 @@
+{% extends 'dashboard_student.html' %}
+{% block main_content %}
+    <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
+        <div class="d-flex text-left ">
+            <a href="{% url 'kanban_landing' %}"
+               class="btn btn-link mt-2 text-decoration-none d-flex justify-content-center align-items-center"><i class="bi bi-arrow-bar-left text-warning "></i>Back</a>
+        </div>
+        <h3 class="text-primary text-lg-center mb-5 mt-3 ls-4">Create your first kanban board to get started.</h3>
+        <div class="card p-5 bg-light d-flex flex-column justify-content-center align-items-center"
+             style="border: none;
+                    border-radius: 1rem;
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto">
+            <form method="post"
+                  action="{% url 'create_board' %}"
+                  class="d-flex flex-column gap-3">
+                {% csrf_token %}
+                <div class="form-group d-flex flex-column border-light"
+                     style="border: none">
+                    <!-- VISA ERROR OM DET FINNS -->
+                    {% if form.name.errors %}
+                        <div class="invalid-feedback d-block text-danger mt-1">{{ form.name.errors.0 }}</div>
+                    {% endif %}
+                    {{ form.name }}
+                </div>
+                <button type="submit"
+                        class="btn btn-lg btn-warning shadow-sm d-flex align-items-center justify-content-center px-4 py-2 rounded-pill text-white fw-semibold btn-home"
+                        style="border-radius: 50px">
+                    Create Board <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

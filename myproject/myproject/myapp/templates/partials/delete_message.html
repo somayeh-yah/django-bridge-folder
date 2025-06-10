@@ -1,0 +1,9 @@
+<div id="message-{{ message.id }}"
+     class="d-flex justify-content-end mb-3 p-0">
+    <div class="position-relative text-muted rounded p-3"
+         style="max-width: 75%;
+                background-color: #bbf7d0">
+        <small class="text-muted">(You deleted this message)</small>
+        <div class="text-muted small mt-1 text-end">{{ message.timestamp|date:"H:i d/m/Y" }}</div>
+    </div>
+</div>
