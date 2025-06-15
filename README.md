@@ -1,4 +1,4 @@
-# Task managenment and chat applictaion
+# Task Management and Chat Application
 This is a web-based project and task management platform built with Django and HTMX. It includes a modern and responsive dashboard interface
 where users can manage tasks, collaborate in real time chat and visualize projects and issues through interactive kanban boards and charts.
 
