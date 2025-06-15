@@ -33,6 +33,9 @@ where users can manage tasks, collaborate in real time chat and visualize projec
 # Clone the repository
 git clone https://github.com/yourusername/django-bridge-folder.git
 
+# Below is a short screen recording of the application in action
+![Task Management and Chat Application](https://github.com/user-attachments/assets/f9af2adb-8790-40a6-9489-62812277d6b0)
+
 # Screenshots
 **HomePage**
 <img width="357" alt="Home-page" src="https://github.com/user-attachments/assets/f068f237-8840-4863-b87f-0967caa8ef7a" />
