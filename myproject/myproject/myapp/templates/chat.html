@@ -1,9 +1,0 @@
-{% extends "dashboard_student.html" %}
-{% block main_content %}
-    <div class="container d-flex flex-column flex-lg-row gap-3">
-        <!-- Lista över chattar -->
-        <div class="chat-room col-lg-4">{% include "partials/chat_rooms.html" %}</div>
-        <!-- Chat room innehåll -->
-        <div class="chat-content flex-grow-1">{% include "partials/chat_room_content.html" %}</div>
-    </div>
-{% endblock %}
