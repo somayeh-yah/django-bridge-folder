@@ -19,6 +19,16 @@ body {
   padding: 0;
 }
 
+.dev{
+  display: flex;
+  justify-content: center;
+   background: #fff3cd;
+    color: #856404;
+    padding:17px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 button {
   cursor: pointer;
   transition: 0.3s;

@@ -1,3 +1,16 @@
 /.vscode
 /django
 /venv
+.env
+*.env
+
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.DS_Store
+Thumbs.db
+staticfiles/
+build/
